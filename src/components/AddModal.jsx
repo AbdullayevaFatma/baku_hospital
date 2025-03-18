@@ -3,27 +3,31 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-function AddModal({ show, handleClose, drName,addAppointment }) {
+function AddModal({ show, handleClose, drName, addAppointment }) {
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
 
+  const today = new Date();
+  today.setHours(today.getHours() + 1);
+  const currentDateTime = today.toISOString().slice(0, 16);
+  console.log(currentDateTime);
+
   const handleSubmit = (e) => {
-    e.preventDefault()
- if(patientName && date){
-  addAppointment({
-    id: crypto.randomUUID(),
-    patient: patientName,
-    day: date,
-    consulted: false,
-    doctor: drName
-  })
-  setPatientName("")
-  setDate("")
-  handleClose()
- }else{
-  alert("Please fill Patient Name and Date sections")
- }
-  
+    e.preventDefault();
+    if (patientName && date) {
+      addAppointment({
+        id: crypto.randomUUID(),
+        patient: patientName,
+        day: date,
+        consulted: false,
+        doctor: drName,
+      });
+      setPatientName("");
+      setDate("");
+      handleClose();
+    } else {
+      alert("Please fill Patient Name and Date sections");
+    }
   };
 
   return (
@@ -54,6 +58,7 @@ function AddModal({ show, handleClose, drName,addAppointment }) {
                 placeholder="Date"
                 onChange={(e) => setDate(e.target.value)}
                 value={date}
+                min={currentDateTime}
               />
             </Form.Group>
             <div className="text-center d-flex gap-3 align-items-center justify-content-end">

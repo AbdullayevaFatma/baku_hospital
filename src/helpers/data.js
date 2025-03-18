@@ -28,7 +28,7 @@ export const doctors = [
     id: 5,
     name: "Prof. Dr. Benjamin Daley",
     dep: "Surgery",
-    img: "https://cdn-ilabeod.nitrocdn.com/zUukpeMBluXkpSlgUMMfQZYBzJcUmlOw/assets/images/optimized/rev-d36af30/russell6437.wpenginepowered.com/wp-content/uploads/2020/04/What-Is-An-Orthopedic-Doctor-In-Brooklyn.jpg",
+    img: "https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
   },
   {
     id: 6,

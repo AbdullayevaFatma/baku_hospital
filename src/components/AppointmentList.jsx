@@ -21,9 +21,9 @@ const AppointmentList = ({ appointmentList, setAppointmentList }) => {
   };
 
   return (
-    <Container className="text-center bg-primary rounded-3 mt-4 p-2">
+    <Container className="text-center bg-primary rounded-3 mt-4 py-4">
       {!appointmentList?.length ? (
-        <img src="/appointment.jpg" width="65%" alt="Appointment" />
+        <img src="/appointment.jpg" width="70%" alt="Appointment" />
       ) : (
         appointmentList.map(({ id, patient, day, consulted, doctor }) => {
           return (
